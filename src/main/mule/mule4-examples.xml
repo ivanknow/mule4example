@@ -9,6 +9,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="mule4-examplesFlow" doc:id="84614562-cdf5-43e6-9e7a-19df89fc418b" >
 		<http:listener doc:name="Listener" doc:id="7aafb2d7-b56e-49a8-8c6b-6f46fd332d60" config-ref="HTTP_Listener_config" path="hello"/>
-		<set-payload value="Hello" doc:name="Set Payload" doc:id="5bcf0956-d741-4bb3-a24c-d74da6824fd2" mimeType="text/plain"/>
+		<set-payload value='#["Hello :"++ attributes.queryParams.test]' doc:name="Set Payload" doc:id="5bcf0956-d741-4bb3-a24c-d74da6824fd2" mimeType="text/plain"/>
 	</flow>
 </mule>
