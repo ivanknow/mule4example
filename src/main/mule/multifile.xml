@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="multifileFlow" doc:id="df2df001-ce27-4908-a97f-923c3ced786f" >
+		<http:listener doc:name="Listener" doc:id="19b201e8-038b-478b-9cbb-449cd7d479b6" config-ref="HTTP_Listener_config" path="test"/>
+		<set-variable value="batata doce" doc:name="Set Variable" doc:id="1c3ac560-4368-4aa3-992f-df29664d55a4" variableName="jantar"/>
+		<set-payload value="#[vars.jantar as String]" doc:name="Set Payload" doc:id="835131db-1a58-4ac5-b27d-779b8378c7c1" mimeType="text/plain"/>
+	</flow>
+</mule>
